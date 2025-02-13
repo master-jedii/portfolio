@@ -27,10 +27,25 @@ class AdminController extends Controller
             'title'=>'required|max:50',
             'content'=>'required'
         ]);
+        $data=[
+            'title'=>$request->title,
+            'content'=>$request->content
+        ];
+        DB::table('blogs')->insert($data);
+        return redirect('/blog');
     }
 
     function delete($id){
         DB::table('blogs')->where('id',$id)->delete();
+        return redirect('/blog');
+    }
+
+    function change($id){
+        $blog=DB::table('blogs')->where('id',$id)->first();
+        $data=[
+            'status'=>!$blog->status
+        ];
+        DB::table('blogs')->where('id',$id)->update($data);
         return redirect('/blog');
     }
 }
