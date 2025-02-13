@@ -3,7 +3,7 @@
 
 @section('content')
     <h2 class="text text-center py-2">หน้าเขียนบทความ</h2>
-    <form method="POST" action="/insert">
+    <form method="POST" action="/admin/insert">
         @csrf
         <div class="form-group">
             <label for="title">ชื่อบทความ</label>

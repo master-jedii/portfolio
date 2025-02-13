@@ -56,7 +56,7 @@
                             <a class="nav-link" href="{{route('about')}}">เกี่ยวกับเรา</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/create">เขียนบทความ</a>
+                            <a class="nav-link" href="/admin/create">เขียนบทความ</a>
                         </li>
                     </ul>
                 </div>

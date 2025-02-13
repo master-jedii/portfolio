@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,24 +14,22 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+///User
+Route::get('/',[BlogController::class,'index']);
+
+
+///Admin
+Route::prefix('admin')->group(function(){
+    Route::get('/about',[AdminController::class,'about'])->name('about');
+    Route::get('/blog',[AdminController::class,'index'])->name('blog');
+    Route::get('/create',[AdminController::class,'create']);
+    Route::post('/insert',[AdminController::class,'insert']);
+    Route::get('/delete/{id}',[AdminController::class,'delete'])->name('delete');
+    Route::get('/change/{id}',[AdminController::class,'change'])->name('change');
+    Route::get('/edit/{id}',[AdminController::class,'edit'])->name('edit');
+    Route::post('/update/{id}',[AdminController::class,'update'])->name('update');
 });
 
-
-
-Route::get('about',[AdminController::class,'about'])->name('about');
-
-Route::get('blog',[AdminController::class,'index'])->name('blog');
-
-Route::get('create',[AdminController::class,'create']);
-
-Route::post('insert',[AdminController::class,'insert']);
-
-Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
-Route::get('change/{id}',[AdminController::class,'change'])->name('change');
-Route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
-Route::post('update/{id}',[AdminController::class,'update'])->name('update');
 
 Auth::routes();
 
