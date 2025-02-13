@@ -48,4 +48,22 @@ class AdminController extends Controller
         DB::table('blogs')->where('id',$id)->update($data);
         return redirect('/blog');
     }
+
+    function edit($id){
+        $blog=DB::table('blogs')->where('id',$id)->first();
+        return view('edit',compact('blog'));
+    }
+
+    function update(Request $request,$id){
+        $request->validate([
+            'title'=>'required|max:50',
+            'content'=>'required'
+        ]);
+        $data=[
+            'title'=>$request->title,
+            'content'=>$request->content
+        ];
+        DB::table('blogs')->where('id',$id)->update($data);
+        return redirect('/blog');
+    }    
 }
