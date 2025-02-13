@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title','Portfolio')
 
@@ -93,7 +93,7 @@
             {{-- //เริ่ม project // --}}
             <div class="row featurette">
                 <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Su Kits <span class="text-muted">"Full Stack"</span></h2>
+                    <h2 class="featurette-heading">Su Kits <span class="text-muted">"React"</span></h2>
                     <p class="lead">Full Stack Project Thesis : เว็บไซต์ระบบยืมคืนอุปกรณ์ภายในคณะเพื่อช่วยอำนวยความสัดวกในการจัดการอุปกรณ์ที่ใช้ในกิจกรรมการเรียนการสอนและวิจัยต่างๆ เช่น กล้องถ่ายภาพ หรืออื่นๆ ระบบนี้ช่วยให้ นักศึกษา/บุคลากร สามารถยื่นข้อเสนอการจอง ยืม และคืนอุปกรณ์ ได้สะดวกผ่านเว็บไซต์ พร้อมฟังก์ชันที่ช่วยให้ผู้ดูแลระบบ สามารถบริหารจัดการกับข้อมูลอุปกรณ์และติดตามสถานะได้อย่างมีประสิทธิภาพ</p>
                     <p>ปีการศึกษา 2568</p>
                 </div>
