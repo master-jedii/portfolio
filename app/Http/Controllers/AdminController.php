@@ -12,7 +12,6 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-
     function index(){
         // $blogs = DB::table('blogs')->paginate(5); /// อันนี้คือ Query builder คือการใช้ อ้างอิงไปยังฐานข้อมูลเพื่อแสดผลข้อมูล
         $blogs = Blog::paginate(5);  /// อันนี้คือ Eloquent คือการใช้ Model มาแสดงผลข้อมูล แทนการ Query builder [ORM]
@@ -27,6 +26,10 @@ class AdminController extends Controller
 
     function create(){
         return view('form');
+    }
+
+    function welcome(){
+        return view('welcome');
     }
 
     function insert(Request $request){

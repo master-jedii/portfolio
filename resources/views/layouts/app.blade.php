@@ -12,7 +12,7 @@
 <body>
     <style>
         body {
-            padding-top: 70px; /* ระยะห่างให้ Navbar ไม่ทับเนื้อหา */
+            padding-top: 55px; /* ระยะห่างให้ Navbar ไม่ทับเนื้อหา */
         }
     </style>
 
@@ -57,6 +57,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/create">เขียนบทความ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/welcome">Portfolio</a>
                         </li>
                     </ul>
                 </div>

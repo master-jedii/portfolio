@@ -28,9 +28,12 @@ Route::prefix('admin')->group(function(){
     Route::get('/change/{id}',[AdminController::class,'change'])->name('change');
     Route::get('/edit/{id}',[AdminController::class,'edit'])->name('edit');
     Route::post('/update/{id}',[AdminController::class,'update'])->name('update');
+    Route::get('/welcome',[AdminController::class,'welcome']);
 });
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
