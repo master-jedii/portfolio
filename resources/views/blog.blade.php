@@ -11,6 +11,7 @@
             <th scope="col">ชื่อบทความ</th>
             <th scope="col">เนื้อหา</th>
             <th scope="col">สถานะบทความ</th>
+            <th scope="col">action</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
                         @else
                             <a href="#" class="btn btn-warning">ฉบับร่าง</a>
                         @endif
+                    </td>
+                    <td>
+                        <a href="{{route('delete',$item->id)}}" class="btn btn-danger">ลบ</a>
+                        <a href="#" class="btn btn-warning">แก้ไข</a>
                     </td>
                 </tr>
             @endforeach

@@ -28,4 +28,9 @@ class AdminController extends Controller
             'content'=>'required'
         ]);
     }
+
+    function delete($id){
+        DB::table('blogs')->where('id',$id)->delete();
+        return redirect('/blog');
+    }
 }
