@@ -4,6 +4,7 @@
 
 
 @section('content')
+    @if (count($blogs)>0)
     <h2 class="text text-center py-2">หน้าบทความทั้งหมด</h2>
     <table class="table table-bordered text-center">
         <thead>
@@ -35,4 +36,7 @@
         </tbody>
     </table>
     {{$blogs->links()}}
+    @else
+        <h2 class="text text-center text-danger py-2">ไม่มีบทความในระบบ</h2>
+    @endif
 @endsection
