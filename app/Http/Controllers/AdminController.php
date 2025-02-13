@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Blog;
 
 class AdminController extends Controller
 {
@@ -11,9 +12,10 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     function index(){
-        $blogs = DB::table('blogs')->paginate(5);
+        // $blogs = DB::table('blogs')->paginate(5); /// อันนี้คือ Query builder คือการใช้ อ้างอิงไปยังฐานข้อมูลเพื่อแสดผลข้อมูล
+        $blogs = Blog::paginate(5);  /// อันนี้คือ Eloquent คือการใช้ Model มาแสดงผลข้อมูล แทนการ Query builder [ORM]
         return view('blog',compact('blogs'));
     }
 
